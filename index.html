@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA en el Aula — Taller para Profesores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#f8fafc;color:#0f172a;line-height:1.6}
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#334155 100%);color:#fff;padding:80px 20px;text-align:center}
+.hero-badge{display:inline-block;background:rgba(99,102,241,0.2);color:#a5b4fc;border:1px solid rgba(99,102,241,0.3);border-radius:50px;padding:8px 20px;font-size:14px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:24px}
+.hero h1{font-size:clamp(32px,6vw,64px);font-weight:900;line-height:1.1;letter-spacing:-0.03em;margin-bottom:20px}
+.hero h1 span{background:linear-gradient(135deg,#818cf8,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:18px;color:#94a3b8;max-width:600px;margin:0 auto 32px}
+.hero-cta{display:inline-block;background:#6366f1;color:#fff;border:none;padding:14px 36px;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none;transition:background 0.2s}
+.hero-cta:hover{background:#4f46e5}
+section{padding:80px 20px;max-width:960px;margin:0 auto}
+.section-label{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#6366f1;margin-bottom:12px}
+h2{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-0.02em;margin-bottom:16px}
+h3{font-size:20px;font-weight:700;margin-bottom:8px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);border:1px solid #e2e8f0;transition:box-shadow 0.2s,transform 0.2s}
+.card:hover{box-shadow:0 10px 25px rgba(0,0,0,0.08);transform:translateY(-2px)}
+.card-icon{font-size:36px;margin-bottom:16px}
+.card h4{font-size:18px;font-weight:700;margin-bottom:8px}
+.card p{color:#475569;font-size:14px;line-height:1.5}
+.flow{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:40px}
+.flow-step{background:#fff;border:2px solid #e2e8f0;border-radius:16px;padding:24px;text-align:center;flex:1;min-width:180px;max-width:220px;position:relative}
+.flow-step .num{width:36px;height:36px;background:#6366f1;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;margin:0 auto 12px}
+.flow-step h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.flow-step p{color:#64748b;font-size:13px}
+.table-wrap{overflow-x:auto;margin-top:24px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+th,td{padding:14px 18px;text-align:left;font-size:14px}
+th{background:#f1f5f9;font-weight:700;color:#0f172a;font-size:13px;text-transform:uppercase;letter-spacing:0.04em}
+td{border-top:1px solid #f1f5f9}
+tr:hover td{background:#f8fafc}
+.prompt-guide{background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:20px;padding:48px;color:#fff;text-align:center}
+.prompt-guide h2{color:#fff}
+.prompt-guide p{color:#a5b4fc;margin-bottom:24px}
+.prompt-guide .btn-white{background:#fff;color:#1e1b4b;border:none;padding:14px 36px;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none;display:inline-block;transition:transform 0.2s}
+.prompt-guide .btn-white:hover{transform:scale(1.03)}
+.cta-section{text-align:center;background:#f1f5f9;border-radius:20px;padding:48px;margin-top:40px}
+.cta-section h3{margin-bottom:8px}
+.cta-section p{color:#475569;margin-bottom:24px}
+footer{text-align:center;padding:40px 20px;color:#94a3b8;font-size:13px}
+footer a{color:#6366f1;text-decoration:none}
+@media (max-width:600px){.hero{padding:60px 16px}.card-grid{grid-template-columns:1fr}.flow{flex-direction:column;align-items:center}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+<div class="hero-badge">Taller Piloto · 60 Minutos</div>
+<h1>Tus Libros se Convierten<br>en <span>Fichas en Minutos</span></h1>
+<p>Un taller teórico-práctico para que cada profesor cree sus propias fichas de aprendizaje con inteligencia artificial, desde su celular y sin pagar nada.</p>
+<a href="#prompts" class="hero-cta">Descarga la Guía de Prompts</a>
+</header>
+
+<section>
+<div class="section-label">El Problema</div>
+<h2>Horas creando fichas que podrías hacer en minutos</h2>
+<p style="color:#475569;max-width:640px">Preparar una ficha de comprensión lectora toma 30-40 minutos. Buscar el texto adecuado, redactar preguntas, verificar niveles de dificultad, diagramar. Y mañana necesitas otra. Y pasado otra.</p>
+</section>
+
+<section>
+<div class="section-label">La Solución</div>
+<h2>De tu libro a una ficha impresa en 3 pasos</h2>
+<div class="flow">
+<div class="flow-step"><div class="num">1</div><h4>📸 Toma una Foto</h4><p>A la página del libro que estás usando esta semana</p></div>
+<div class="flow-step"><div class="num">2</div><h4>🎙️ Dicta tu Prompt</h4><p>Pídele a la IA la ficha que necesitas: grado, preguntas, formato</p></div>
+<div class="flow-step"><div class="num">3</div><h4>📄 Descarga y Usa</h4><p>Recibe tu ficha en .docx o .html. Lista para imprimir mañana</p></div>
+</div>
+</section>
+
+<section>
+<div class="section-label">¿Qué Aprenden los Profesores?</div>
+<h2>El taller en 60 minutos</h2>
+<div class="card-grid">
+<div class="card"><div class="card-icon">🧠</div><h4>La IA es tu Practicante</h4><p>Entiende cómo funcionan estos modelos: son como un practicante que leyó millones de libros pero nunca pisó un aula. Tú eres el manager.</p></div>
+<div class="card"><div class="card-icon">📸</div><h4>5 Tipos de Input</h4><p>Texto, dictado por voz, foto del libro, imagen de internet, enlace. Mientras más contexto le des, mejor opera.</p></div>
+<div class="card"><div class="card-icon">🔄</div><h4>Corrección en 3 Pasos</h4><p>"Bien: estructuraste las preguntas. Mejorar: simplifica la 3. Genial: añade un ejemplo." La IA tiene memoria y aprende.</p></div>
+<div class="card"><div class="card-icon">🔍</div><h4>Verificación de Fuentes</h4><p>Estos sistemas alucinan hasta el 42% de cada respuesta. Aprende a pedir fuentes y verificarlas antes de usar el material.</p></div>
+<div class="card"><div class="card-icon">📦</div><h4>Formatos Profesionales</h4><p>.docx para Word, .html para la web del colegio. No te conformes con copiar y pegar.</p></div>
+<div class="card"><div class="card-icon">🤖</div><h4>6 IAs Gratuitas</h4><p>ChatGPT, Gemini, Claude, DeepSeek, Kimi, MiMo. Todas desde tu celular. Si una no te da resultado, pruebas otra.</p></div>
+</div>
+</section>
+
+<section>
+<div class="section-label">Las IAs que Usarás</div>
+<h2>6 herramientas gratuitas desde tu celular</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>IA</th><th>Empresa</th><th>Plan Gratuito</th><th>Ideal Para</th></tr></thead>
+<tbody>
+<tr><td><strong>ChatGPT</strong></td><td>OpenAI</td><td>GPT-4o mini ilimitado</td><td>Fichas, prompts complejos, subir archivos</td></tr>
+<tr><td><strong>Gemini</strong></td><td>Google</td><td>1.5 Flash ilimitado</td><td>Conecta con Drive, Docs, YouTube</td></tr>
+<tr><td><strong>Claude</strong></td><td>Anthropic</td><td>Sonnet 3.5 diario</td><td>Textos largos, análisis profundo</td></tr>
+<tr><td><strong>DeepSeek</strong></td><td>DeepSeek (China)</td><td>R1/V3 gratis</td><td>Razonamiento lógico, matemáticas</td></tr>
+<tr><td><strong>Kimi</strong></td><td>Moonshot AI (China)</td><td>2M tokens contexto</td><td>Procesar libros completos</td></tr>
+<tr><td><strong>MiMo</strong></td><td>Xiaomi</td><td>Flash, gratuito</td><td>Respuestas rápidas desde el celular</td></tr>
+</tbody>
+</table>
+</div>
+<p style="color:#64748b;font-size:13px;margin-top:12px;text-align:center">Costo total para el profesor: <strong>S/ 0.00</strong></p>
+</section>
+
+<section id="prompts">
+<div class="prompt-guide">
+<div class="section-label" style="color:#a5b4fc">Descargable</div>
+<h2>Guía de 10 Prompts para Profesores</h2>
+<p>Comprensión lectora, matemáticas, ciencias, vocabulario, historia, efemérides, inglés, educación física, arte y tutoría. Con el método de corrección en 3 pasos.</p>
+<a href="#" class="btn-white" id="downloadBtn">⬇ Descargar Guía (PDF)</a>
+</div>
+</section>
+
+<section>
+<div class="cta-section">
+<h3>¿Quieres este taller en tu colegio?</h3>
+<p>Profesores que dominan IA. Alumnos que crean en vez de solo consumir. Un colegio que se diferencia.</p>
+<a href="mailto:hola@futuraria.com" style="display:inline-block;background:#6366f1;color:#fff;padding:14px 36px;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none">Escríbenos a hola@futuraria.com</a>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Futuraria · Diseñado por <a href="https://futuraria.com">Futuraria</a></p>
+<p style="margin-top:8px">Taller creado por Hilda Ayme Fernández, PhD en Terapia Ocupacional</p>
+</footer>
+
+<script>
+document.getElementById('downloadBtn').addEventListener('click',function(e){
+e.preventDefault();
+var c='GUÍA DE 10 PROMPTS — IA EN EL AULA\n=====================================\n\nLAS 6 REGLAS DE ORO:\n1. Más contexto = mejor resultado. Dale foto del libro, enlace, texto.\n2. La IA es tu practicante, tú eres el manager.\n3. Si se equivoca, corrígela en 3 pasos: Bien / Mejorar / Genial.\n4. Pide fuentes y verifícalas (pueden alucinar hasta el 42%).\n5. Pide el formato: .docx para Word, .html para web.\n6. Prueba distintas IAs: ChatGPT, Gemini, Claude, DeepSeek, Kimi, MiMo.\n\nLOS 10 PROMPTS (copia, pega y adapta el grado y tema):\n\n1. COMPRENSIÓN LECTORA\n"Con esta foto de la página del libro, crea una ficha de comprensión lectora para [GRADO]. 5 preguntas (3 literales, 1 inferencial, 1 de opinión). Incluye respuestas. .docx."\n\n2. MATEMÁTICAS\n"Crea 10 ejercicios de [TEMA] para [GRADO]. 6 directos, 4 problemas contextualizados con ejemplos peruanos. Soluciones al final. .docx."\n\n3. CIENCIAS\n"Con esta foto del libro, crea una ficha de ciencias para [GRADO] con: explicación simple, 3 datos curiosos (con fuente) y un mini-experimento para hacer en clase. .docx."\n\n4. VOCABULARIO\n"Genera una ficha de vocabulario para [GRADO] con 10 palabras de [TEMA]. Cada palabra con: definición simple, ejemplo en oración, y sinónimo. .docx."\n\n5. HISTORIA / PERSONAL SOCIAL\n"Con esta foto y este enlace [LINK], crea una ficha de [TEMA] para [GRADO]. Línea de tiempo con 5 eventos clave y 3 preguntas de reflexión. Incluye fuentes. .html."\n\n6. EFEMÉRIDES\n"Crea una ficha sobre [FECHA CONMEMORATIVA] para [GRADO]. Qué pasó, por qué es importante, y una actividad para el aula. Incluye fuentes verificables. .docx."\n\n7. INGLÉS\n"Crea una ficha de vocabulario inglés-español para [GRADO] sobre [TEMA]. 10 palabras con traducción, pronunciación escrita y un ejemplo. .docx."\n\n8. EDUCACIÓN FÍSICA\n"Crea una ficha con 5 ejercicios físicos adaptados para niños de [GRADO]. Cada ejercicio con: nombre, descripción, duración y beneficio. .docx."\n\n9. ARTE\n"Crea una ficha de arte para [GRADO] sobre [TÉCNICA/TEMA]. Materiales necesarios, 5 pasos ilustrados (descríbelos) y un dato curioso del artista o técnica. .docx."\n\n10. TUTORÍA\n"Crea una ficha de tutoría para [GRADO] sobre [TEMA: empatía, trabajo en equipo, bullying]. Actividad de 15 min + 3 preguntas para discusión grupal. Lenguaje cercano y respetuoso. .docx."\n\n---\nDescarga más recursos en: [URL DE LA WEB]\n© 2026 Futuraria · Hilda Ayme Fernández, PhD';
+var b=new Blob([c],{type:'text/plain;charset=utf-8'});
+var u=URL.createObjectURL(b);
+var a=document.createElement('a');
+a.href=u;a.download='Guia_10_Prompts_IA_en_el_Aula.txt';
+document.body.appendChild(a);a.click();
+document.body.removeChild(a);URL.revokeObjectURL(u);
+});
+</script>
+</body>
+</html>
